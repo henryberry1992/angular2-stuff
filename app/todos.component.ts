@@ -68,6 +68,6 @@ export class ToDoComponent
 	}
 	removeToDo(potato)
 	{
-		console.log(potato);
+		this.potatoes.splice(this.potatoes.indexOf(potato), 1);
 	}
 }

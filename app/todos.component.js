@@ -35,7 +35,7 @@ System.register(['@angular/core'], function(exports_1, context_1) {
                     }
                 };
                 ToDoComponent.prototype.removeToDo = function (potato) {
-                    console.log(potato);
+                    this.potatoes.splice(this.potatoes.indexOf(potato), 1);
                 };
                 __decorate([
                     core_1.Input(), 
