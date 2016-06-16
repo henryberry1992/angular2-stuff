@@ -26,11 +26,12 @@ System.register(['@angular/core', './todos.component', './my-component.component
         execute: function() {
             AppComponent = (function () {
                 function AppComponent() {
+                    this.myNumber = 8;
                 }
                 AppComponent = __decorate([
                     core_1.Component({
                         selector: 'my-app',
-                        template: "\n\t<h1>My First Angular 2 App</h1>\n\t<todos></todos>\n\t<my-component></my-component>\n\t",
+                        template: "\n\t<h1>My First Angular 2 App</h1>\n\t<todos [rnJesus] = \"myNumber\"></todos>\n\t<my-component></my-component>\n\t",
                         directives: [todos_component_1.ToDoComponent, my_component_component_1.MyComponent]
                     }), 
                     __metadata('design:paramtypes', [])

@@ -7,12 +7,12 @@ import {MyComponent} from './my-component.component';
 	selector: 'my-app',
 	template: `
 	<h1>My First Angular 2 App</h1>
-	<todos></todos>
+	<todos [rnJesus] = "myNumber"></todos>
 	<my-component></my-component>
 	`,
 	directives: [ToDoComponent, MyComponent]
 })
 export class AppComponent 
 {
-
+	public myNumber: number = 8;
 }

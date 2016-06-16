@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, Input} from '@angular/core';
 
 @Component ({
 	selector: 'todos',
@@ -39,7 +39,7 @@ import {Component} from '@angular/core';
 export class ToDoComponent
 {
 	todos: string;
-	rnJesus: number;
+	@Input() rnJesus: number;
 	chore: string;
 	newToDo: string;
 	potatoes: Array<string>;

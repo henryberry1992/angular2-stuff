@@ -37,6 +37,10 @@ System.register(['@angular/core'], function(exports_1, context_1) {
                 ToDoComponent.prototype.removeToDo = function (potato) {
                     console.log(potato);
                 };
+                __decorate([
+                    core_1.Input(), 
+                    __metadata('design:type', Number)
+                ], ToDoComponent.prototype, "rnJesus", void 0);
                 ToDoComponent = __decorate([
                     core_1.Component({
                         selector: 'todos',
