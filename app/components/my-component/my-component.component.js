@@ -32,7 +32,7 @@ System.register(['@angular/core'], function(exports_1, context_1) {
                 MyComponent = __decorate([
                     core_1.Component({
                         selector: 'my-component',
-                        template: "\n\t<h1> Hello {{name}} </h1>\n\t<input [(ngModel)] = \"name\" placeholder = \"name\" (ngModelChange) = \"setUpperCase($event)\"/>\n\t<div><img [src] = \"imageUrl\"/></div>\n\t<br />\n\t<button (click) = \"changeMessage()\">Button</button>\n\t<h1> {{clickMessage}}</h1>\n\t<input [(ngModel)] = \"clickMessage\"/>\n\t"
+                        templateUrl: './app/components/my-component/my-component.component.html'
                     }), 
                     __metadata('design:paramtypes', [])
                 ], MyComponent);

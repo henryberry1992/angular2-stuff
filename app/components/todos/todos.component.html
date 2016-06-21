@@ -1,12 +1,9 @@
-import {Component, Input} from '@angular/core';
-
-@Component ({
-	selector: 'todos',
-	template: `
 	<h1> to do list </h1>
 	<button (click) = "randomNum()"> Spin the wheel baby!</button>
 	<div *ngIf="rnJesus >5">
-		Big Number {{rnJesus}}
+		<div>
+			Big Number {{rnJesus}}
+		</div>
 	</div>
 	<br />
 	<input type = "text" class = "form-control" [(ngModel)] = "newToDo" (keyup.enter)="addToDo()" />
@@ -32,42 +29,3 @@ import {Component, Input} from '@angular/core';
 		</li>
 	</ul>
 	
-	`
-
-})
-
-export class ToDoComponent
-{
-	todos: string;
-	@Input() rnJesus: number;
-	chore: string;
-	newToDo: string;
-	potatoes: Array<string>;
-	constructor()
-	{
-		this.chore = '';
-		this.potatoes = ['Yukon Gold', 'Baking', 'Laura', 'Melody', 'Kennebec'];
-	}
-
-	randomNum()
-	{
-		this.rnJesus = Math.floor((Math.random() * 10) + 1);
-	}
-
-	addToDo()
-	{
-		if(!this.newToDo)
-		{
-			return;
-		}
-		else
-		{
-			this.potatoes.push(this.newToDo);
-		}
-		
-	}
-	removeToDo(potato)
-	{
-		this.potatoes.splice(this.potatoes.indexOf(potato), 1);
-	}
-}

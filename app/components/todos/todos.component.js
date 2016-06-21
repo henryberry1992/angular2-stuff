@@ -1,4 +1,4 @@
-System.register(['@angular/core'], function(exports_1, context_1) {
+System.register(['@angular/core', '../../services/todos.service'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,18 +10,22 @@ System.register(['@angular/core'], function(exports_1, context_1) {
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1;
+    var core_1, todos_service_1;
     var ToDoComponent;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
+            },
+            function (todos_service_1_1) {
+                todos_service_1 = todos_service_1_1;
             }],
         execute: function() {
             ToDoComponent = (function () {
-                function ToDoComponent() {
+                function ToDoComponent(ToDoService) {
+                    this.ToDoService = ToDoService;
                     this.chore = '';
-                    this.potatoes = ['Yukon Gold', 'Baking', 'Laura', 'Melody', 'Kennebec'];
+                    this.potatoes = ToDoService.getPotato();
                 }
                 ToDoComponent.prototype.randomNum = function () {
                     this.rnJesus = Math.floor((Math.random() * 10) + 1);
@@ -31,11 +35,11 @@ System.register(['@angular/core'], function(exports_1, context_1) {
                         return;
                     }
                     else {
-                        this.potatoes.push(this.newToDo);
+                        this.ToDoService.addPotato(this.newToDo);
                     }
                 };
                 ToDoComponent.prototype.removeToDo = function (potato) {
-                    this.potatoes.splice(this.potatoes.indexOf(potato), 1);
+                    this.ToDoService.removePotato(potato);
                 };
                 __decorate([
                     core_1.Input(), 
@@ -44,9 +48,10 @@ System.register(['@angular/core'], function(exports_1, context_1) {
                 ToDoComponent = __decorate([
                     core_1.Component({
                         selector: 'todos',
-                        template: "\n\t<h1> to do list </h1>\n\t<button (click) = \"randomNum()\"> Spin the wheel baby!</button>\n\t<div *ngIf=\"rnJesus >5\">\n\t\tBig Number {{rnJesus}}\n\t</div>\n\t<br />\n\t<input type = \"text\" class = \"form-control\" [(ngModel)] = \"newToDo\" (keyup.enter)=\"addToDo()\" />\n\n\t<br />\n\t<input [(ngModel)] = \"chore\" placeholder = \"chore\"/>\n\t<div [ngSwitch] = \"chore\">\n\t\t<div *ngSwitchWhen = \"'mopping'\">\n\t\t\t{{1+1}}\n\t\t</div>\n\t\t<div *ngSwitchWhen = \"'sweeping'\">\n\t\t\tSweeping\n\t\t</div>\n\t\t<div *ngSwitchDefault>\n\t\t\tDoing Nothing\n\t\t</div>\n\t</div>\n\t<ul class =\"list-group\">\n\t\t<li *ngFor =\"let potato of potatoes\" class=\"list-group-item\">\n\t\t\t<a href =\"#\" (dblclick)=\"removeToDo(potato)\">\n\t\t\t\t{{potato}}\n\t\t\t</a>\n\t\t</li>\n\t</ul>\n\t\n\t"
+                        templateUrl: './app/components/todos/todos.component.html',
+                        providers: [todos_service_1.ToDoService]
                     }), 
-                    __metadata('design:paramtypes', [])
+                    __metadata('design:paramtypes', [todos_service_1.ToDoService])
                 ], ToDoComponent);
                 return ToDoComponent;
             }());

@@ -2,7 +2,7 @@ import {Component, Input, Output, EventEmitter} from '@angular/core';
 
 @Component({
 	selector: 'inputoutput',
-	templateUrl: 'app/inputoutput.component.html'
+	templateUrl: './app/components/inputoutput/inputoutput.component.html'
 })
 export class IOComponent
 {

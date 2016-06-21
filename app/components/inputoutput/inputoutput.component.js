@@ -45,7 +45,7 @@ System.register(['@angular/core'], function(exports_1, context_1) {
                 IOComponent = __decorate([
                     core_1.Component({
                         selector: 'inputoutput',
-                        templateUrl: 'app/inputoutput.component.html'
+                        templateUrl: './app/components/inputoutput/inputoutput.component.html'
                     }), 
                     __metadata('design:paramtypes', [])
                 ], IOComponent);

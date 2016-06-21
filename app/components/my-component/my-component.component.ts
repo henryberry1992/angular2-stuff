@@ -2,15 +2,7 @@ import { Component } from '@angular/core';
 
 @Component({
 	selector: 'my-component',
-	template: `
-	<h1> Hello {{name}} </h1>
-	<input [(ngModel)] = "name" placeholder = "name" (ngModelChange) = "setUpperCase($event)"/>
-	<div><img [src] = "imageUrl"/></div>
-	<br />
-	<button (click) = "changeMessage()">Button</button>
-	<h1> {{clickMessage}}</h1>
-	<input [(ngModel)] = "clickMessage"/>
-	`
+	templateUrl: './app/components/my-component/my-component.component.html'
 })
 
 export class MyComponent

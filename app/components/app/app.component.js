@@ -1,4 +1,4 @@
-System.register(['@angular/core', './todos.component', './my-component.component', './inputoutput.component'], function(exports_1, context_1) {
+System.register(['@angular/core', '../todos/todos.component', '../my-component/my-component.component', '../inputoutput/inputoutput.component'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -38,7 +38,7 @@ System.register(['@angular/core', './todos.component', './my-component.component
                 AppComponent = __decorate([
                     core_1.Component({
                         selector: 'my-app',
-                        template: "\n\t<h1>My First Angular 2 App</h1>\n\t<todos [rnJesus] = \"myNumber\"></todos>\n\t<my-component></my-component>\n\t<inputoutput [counter] =\"myCounter\" (counterChange) = \"myValueChange($event)\"></inputoutput>\n\t",
+                        templateUrl: './app/components/app/app.component.html',
                         directives: [todos_component_1.ToDoComponent, my_component_component_1.MyComponent, inputoutput_component_1.IOComponent]
                     }), 
                     __metadata('design:paramtypes', [])
